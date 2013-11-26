@@ -16,12 +16,19 @@ line = d3.svg.line!
 veznice.forEach (veznica) -> veznica.line = years.map (year) -> (parseFloat veznica[year]) || 0
 tooltipGenerator = (point, index) ->
     escape "Propuštěných v roce #{years[index]}: <strong>#{Math.floor point * 100}%</strong>"
+content = d3.select \tbody#content
+d3.select \select .on \change ->
+    classString = @value
+    if Modernizr.svg
+        classString += " svg"
+    content.attr \class classString
 
-d3.select \table#content
+content
     .classed \svg Modernizr.svg
     .selectAll \tr
     .data veznice
     .enter!append \tr
+        ..attr \class -> it.kategorie?toLowerCase!split " " .0.split "" .join " "
         ..append \td
             ..attr \class \group
             ..html (.kategorie)

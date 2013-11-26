@@ -7,19 +7,30 @@
         <link rel="stylesheet" type="text/css" href="screen.css" />
     </head>
     <body>
-        <table id="content">
+        <select name="" id="">
+            <option value="a b c d">Všechny věznice</option>
+            <option value="a">Pouze skupina A - nejlehčí</option>
+            <option value="b">Pouze skupina B</option>
+            <option value="c">Pouze skupina C</option>
+            <option value="d">Pouze skupina D - nejtěžší</option>
+        </select>
+        <table>
             <thead>
-                <th>
-                    <abbr title="Nápravná skupina">Nápr. skup.</abbr>
-                </th>
-                <th>
-                    Název věznice
-                </th>
-                <th>
-                    Počty propuštěných
-                </th>
-
+                <tr>
+                    <th>
+                        <abbr title="Nápravná skupina">Nápr. skup.</abbr>
+                    </th>
+                    <th>
+                        Název věznice
+                    </th>
+                    <th>
+                        Počty propuštěných
+                    </th>
+                </tr>
             </thead>
+            <tbody id="content" class="a b c d">
+
+            </tbody>
         </table>
         <script src="script.js"></script>
         <!-- script type="text/javascript">
