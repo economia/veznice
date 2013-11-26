@@ -1,3 +1,30 @@
 @import prefixes
 @import colors
 @import basics
+abbr
+    border-bottom 1px dotted darken(HNBlue, 85%)
+table
+    border-collapse collapse
+    thead
+        th
+            color darken(HNBlue, 85%)
+            background HNBlue
+            padding 4px 10px
+            border-bottom 1px solid darken(@background, 40%)
+    tr
+        background #f6f6f6
+        td
+            border-bottom 1px solid darken(@background, 20%)
+        &:nth-child(2n)
+            background lighten(HNBlue, 90%)
+            td
+                border-bottom 1px solid darken(@background, 20%)
+    td
+        &.group
+            padding-left 10px
+        &.spark
+            svg
+                path
+                    stroke darken(HNBlue, 30%)
+                    stroke-width 1px
+                    fill none
