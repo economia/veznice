@@ -13,9 +13,12 @@ y = d3.scale.linear!
 line = d3.svg.line!
     ..x (point, index) -> (yearWidth / 2) + x index
     ..y y
-veznice.forEach (veznica) -> veznica.line = years.map (year) -> (parseFloat veznica[year]) || 0
+veznice.forEach (veznica) -> veznica.line = years.map (year) -> (parseFloat veznica[year]) || -0.1
 tooltipGenerator = (point, index) ->
-    escape "Propuštěných v roce #{years[index]}: <strong>#{Math.floor point * 100}%</strong>"
+    if point >= 0
+        escape "Propuštěných v roce #{years[index]}: <strong>#{Math.floor point * 100}%</strong>"
+    else
+        escape "Propuštěných v roce #{years[index]}: věznice data neposkytla"
 content = d3.select \tbody#content
 d3.select \select .on \change ->
     classString = @value
