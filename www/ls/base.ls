@@ -11,7 +11,7 @@ y = d3.scale.linear!
 line = d3.svg.line!
     ..x (point, index) -> x index
     ..y y
-
+veznice.forEach (veznica) -> veznica.line = years.map (year) -> (parseFloat veznica[year]) || 0
 d3.select \table#content .selectAll \tr
     .data veznice
     .enter!append \tr
@@ -27,10 +27,5 @@ d3.select \table#content .selectAll \tr
                 ..attr \width 300
                 ..attr \height 30
                 ..append \path
-                    ..datum (veznica) -> years.map (year) -> (parseFloat veznica[year]) || 0
-                    ..attr \d ->
-                        ll = line it
-                        console.log it
-                        ll
-
-console.log veznice
+                    ..datum (.line)
+                    ..attr \d line
