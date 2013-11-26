@@ -30,12 +30,6 @@ d3.select \table#content
             ..html -> it["věznice"]
         ..append \td
             ..attr \class \spark
-            ..append \svg
-                ..attr \width 300
-                ..attr \height 30
-                ..append \path
-                    ..datum (.line)
-                    ..attr \d line
             ..selectAll \div.year
                 .data (.line)
                 .enter!append \div
@@ -47,4 +41,10 @@ d3.select \table#content
                     ..append \div
                         ..attr \data-tooltip tooltipGenerator
                         ..style \height -> "#{height - y it}px"
+            ..append \svg
+                ..attr \width 300
+                ..attr \height 30
+                ..append \path
+                    ..datum (.line)
+                    ..attr \d line
 

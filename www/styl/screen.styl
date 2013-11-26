@@ -3,6 +3,8 @@
 @import basics
 abbr
     border-bottom 1px dotted darken(HNBlue, 85%)
+    &:hover
+        cursor help
 table
     border-collapse collapse
     thead
@@ -23,20 +25,26 @@ table
         &.group
             padding-left 10px
         &.spark
+            width 300px
+            height 30px
             position relative
             padding 0px
             line-height 0px
             svg
+                position relative
+                z-index 1
                 path
                     stroke darken(HNBlue, 30%)
                     stroke-width 1px
                     fill none
             .year
+                z-index 2
                 position absolute
                 top 0px
                 border-right 1px dotted darken(#f6f6f6, 20%)
                 &:hover
                     background rgba(0, 0, 0, 0.1)
+                    cursor help
                 div
                     background darken(HNBlue, 35%)
                     position absolute
