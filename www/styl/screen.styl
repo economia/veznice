@@ -24,8 +24,25 @@ table
             padding-left 10px
         &.spark
             position relative
+            padding 0px
+            line-height 0px
             svg
                 path
                     stroke darken(HNBlue, 30%)
                     stroke-width 1px
                     fill none
+            .year
+                position absolute
+                top 0px
+                border-right 1px dotted darken(#f6f6f6, 20%)
+                &:hover
+                    background rgba(0, 0, 0, 0.1)
+                div
+                    background darken(HNBlue, 35%)
+                    position absolute
+                    width 100%
+                    left 0px
+                    bottom 0px
+table.svg
+    td .year div
+        display none
